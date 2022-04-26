@@ -93,7 +93,7 @@ void loop() {
       pixels.show(); 
   }
   else {
-      pixels.clear();
+      pixels.fill(pixels.Color(0, 0, 0), 0, 64);
       pixels.show();
   }
 
