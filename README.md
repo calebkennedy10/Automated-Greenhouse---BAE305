@@ -5,6 +5,7 @@ The purpose of this project is to utilize electronics and sensors to automate se
 ## Design Description
 ### Supplies Needed
 - SparkFun Electronics RedBoard DEV-13975
+- Clear tub
 - Adafruit 997 (Plastic Water Solenoid Valve - 12V -1/2" Nominal)
 - ElectricSolenoidValves.com RSC-A2-12VDC (1/4" 12V DC Push Connect Plastic Solenoid Valve)
 - MXC 1/4" Automatic Drip Mist Irrigation Kit (Model: GGOB)
