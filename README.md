@@ -28,6 +28,9 @@ The irrigation system consists of a 1/4" 12V DC plastic solenoid valve, as well 
 ## Testing Description
 Early testing consisted of examining every component separately in order to ensure basic functionality, such as whether valves would open, or servo motors would turn when instructed to by the code. The components were then tested in combination, when they were wired up as they would be for the greenhouse. 
 ### Equipment
+- Laptop
+- USB connector (Arduino to laptop)
+- Access to a faucet/water supply
 ### Procedure
 ## Design Decision Discussion
 ## Test Results Discussion
