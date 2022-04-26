@@ -11,6 +11,7 @@ The purpose of this project is to utilize electronics and sensors to automate se
 - SparkFun Generic Servo Motors (ROB-09065)
 - Bonsai wire
 - Jumper wires (male-male and male-female)
+- Electrical tape
 - 
 ### 3D-Printed Components
 ### Circuit
