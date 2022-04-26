@@ -10,8 +10,11 @@ The purpose of this project is to utilize electronics and sensors to automate se
 - MXC 1/4" Automatic Drip Mist Irrigation Kit (Model: GGOB)
 ### Circuit
 ### Greenhouse Assembly
+#### Cooling System
+#### Heating System
+#### Lights
+#### Irrigation
 ### Code
-#### Demonstration Code
 
 ## Testing Description
 Early testing consisted of examining every component separately in order to ensure basic functionality, such as whether valves would open, or servo motors would turn when instructed to by the code. The components were then tested in combination, when they were wired up as they would be for the greenhouse. 
