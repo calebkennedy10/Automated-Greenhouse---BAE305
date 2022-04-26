@@ -105,11 +105,11 @@ void loop() {
     durationInput = duration.toInt();
 
       if (lightInput == 1) {
-        pixels.fill(pixels.Color(255, 255, 255), 0, 64);
+        pixels.fill(pixels.Color(255, 0, 255), 0, 64);
         pixels.show();    
       }
       else {
-        pixels.clear();
+        pixels.fill(pixels.Color(0, 0, 0), 0, 64);
         pixels.show();
       }
 
