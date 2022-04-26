@@ -13,7 +13,7 @@ The purpose of this project is to utilize electronics and sensors to automate se
 - Bonsai wire
 - Jumper wires (male-male and male-female)
 - Electrical tape
-- 
+- Plusivo Hook-up Wire Kit
 ### 3D-Printed Components
 ### Circuit
 ### Greenhouse Assembly
