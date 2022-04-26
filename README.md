@@ -11,6 +11,8 @@ The purpose of this project is to utilize electronics and sensors to automate se
 ### Circuit
 ### Greenhouse Assembly
 ### Code
+#### Demonstration Code
+
 ## Testing Description
 ### Equipment
 ### Procedure
