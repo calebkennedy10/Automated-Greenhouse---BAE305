@@ -17,7 +17,7 @@ The purpose of this project is to utilize electronics and sensors to automate se
 #### Lights
 #### Sensors
 #### Irrigation
-The irrigation system consists of a 1/4" 12V DC plastic solenoid valve, as well 15 feet of 1/4" diameter tubing, 18 adjustable mister nozzles, 20 flat tee fittings, and a 3/4"-1/4" faucet adapter that connects to a garden hose. 
+The irrigation system consists of a 1/4" 12V DC plastic solenoid valve, as well 15 feet of 1/4" diameter tubing, 18 adjustable mister nozzles, 20 flat tee fittings, and a 3/4"-1/4" faucet adapter from the MXC Automatic Drip Mist Irrigation Kit. 
 #### Overall Assembly
 ### Code
 
