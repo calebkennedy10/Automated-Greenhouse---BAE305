@@ -1,7 +1,7 @@
 # EE305_Project_Greenhouse
 Master code for running greenhouse
 ## Summary
-The purpose of this project is to utilize electronics and sensors to automate several greenhouse functions on a model scale as both a prototype for a full-size microcontroller-based automation system and as an educational model that can be used to demonstrate how an automated greenhouse works. Our team developed sensors for relative humidity, temperature, and light level in order to direct automated heating, cooling, and lighting systems, as well as an automated irrigation system running on a timer. The main goals of the project were to create code that used sensor data to activate several of the systems both for demonstration purposes and actual utilizing of the greenhouse; to assemble a suitable greenhouse setup from a clear tub; and to organize the system in a way that would provide accurate data on greenhouse conditions. Each component was tested separately and as a whole, and the automated greenhouse was able to function as outlined in the project backlog.
+The purpose of this project is to utilize electronics and sensors to automate several greenhouse functions on a model scale as both a prototype for a full-size microcontroller-based automation system and as an educational model that can be used to demonstrate how an automated greenhouse works. Our team developed a sensor to detect light level and utilized an affordable off-the-shelf temperature and humidity sensor in order to direct automated heating, cooling, and lighting systems, as well as an automated irrigation system running on a timer. The main goals of the project were to create code that used sensor data to activate several of the systems both for demonstration purposes and actual utilizing of the greenhouse; to assemble a suitable greenhouse setup from a clear tub; and to organize the system in a way that would provide accurate data on greenhouse conditions. Each component was tested separately and as a whole, and the automated greenhouse was able to function as outlined in the project backlog.
 ## Design Description
 ### Supplies Needed
 - SparkFun Electronics RedBoard DEV-13975
@@ -17,7 +17,13 @@ The purpose of this project is to utilize electronics and sensors to automate se
 - Photoresistor
 - Ws2812 LED Matrix Panel
 - DC 12V 24V to 5V 10A Converter
+- 1/2" PVC pipe and various 1/2" fittings
+- 10W 110V AC aquarium pump with 1/2" ID tubing output
+- 1/2" ID tubing and barb fittings
+- PVC cement and primer
+- PLA filament
 ### 3D-Printed Components
+All 3D printed componets are available via the "3D PRINTED PARTS" file in the repository.  They are available in their native SOLIDWORKS CAD formats.  Please refer to the assembly files in order to determine which parts are to be printed for each assembly and how the parts are assembled together.  3mm self tapping screws and 1/4"-20 bolts and nuts are the only pieces of hardware required to assemble each 3D printed assembly.  Parts can be printed out of several different materials and are designed to be printed on an FDM 3D printer.  Our team utilized Overture PLA Filament to print the parts; however, other common filaments types such as PETG, ABS, and ASA are acceptable if so desired.  All parts should be printed at a .2mm layer height with and infill density of 10%-15%.  It is advised to make spares of smaller parts such as the water emitters and servo attachments as these parts are easy to break during the assembly process.  Moving parts such as the vent flaps s will have to be sanded in order to allow for smooth rotation.  It is also recommended to drill out or sand holes where rotation will take place.
 ### Circuit
 ### Greenhouse Assembly
 #### Cooling System
