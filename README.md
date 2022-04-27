@@ -49,8 +49,10 @@ For the vent fan assemblies, try to mount them as close to the center as possibl
 
 For the evaporative cooling system assembly, mount it as far to one side of the house as possible to allow for enough room for the servo mount on the inside.  The evaporative cooling wall assembly and one set of mounting adapters are mounted to the exterior of the greenhouse while the multi-vent assembly, servo mount, and last set of mounting adapters are mounted on the inside of the greenhouse.  The supply pipe for the evaporative cooling will need to fabricated using 1/2" PVC pipe, 15 Water Emitters, a PVC end cap, a slip joint-female thread pvc fitting, and male thread-1/2" barb fitting.  The 3/16 jig in the 3D printed parts folder can be used along with a cordless drill and 3/16" drill bit to drill the holes for the emitters.  The jig is used by inserting the peg into the first drilled hole and then drilling the next hole through the opening in the jig.  This process can be repeated for all 15 holes.  After drilling all of the holes, prep the pipe with primer, and insert the water emitters into the holes.  Use PVC cement on the emitter when placing them on the pipe to adhere them to the pipe and create a water tight seal.  Then slide the 3D printed pipe mounts onto both ends of the pipe.  Mount the pipe on the greenhouse and cut the ends to your desired length.  Then use the primer and cement to put on the rest of the fittings. 1/2" tubing will have to be ran from the pipe to the pump in the water sump; therefore, the last fitting on the pipe whould be a 1/2" barb fitting with a hose clamp.
 
-![](https://github.com/calebkennedy10/EE305_Project_Greenhouse/blob/main/IMAGES/EVAP_SYSTEM_ASSEMBLY.JPG)
 ![](https://github.com/calebkennedy10/EE305_Project_Greenhouse/blob/main/IMAGES/EVAPORATIVE%20COOLING%20WALL%20ASSEMBLY.JPG)
+
+![](https://github.com/calebkennedy10/EE305_Project_Greenhouse/blob/main/IMAGES/EVAP_SYSTEM_ASSEMBLY.JPG)
+
 ![](https://github.com/calebkennedy10/EE305_Project_Greenhouse/blob/main/IMAGES/MULTI_VENT_ASSEMBLY.JPG)
 
 #### Heating System
