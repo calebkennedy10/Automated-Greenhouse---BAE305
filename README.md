@@ -85,6 +85,12 @@ Early testing consisted of examining every component separately in order to ensu
 ## Design Decision Discussion
 ### Irrigation
 The objective for the irrigation system was that it would be able to spray a tray of seedlings evenly. To this end, the MIXC Mist Irrigation Kit was chosen because it contained 1/4" tubing and associated misters, tees, and adapters, which would allow the irrigation setup to be small enough to place in three rows against the ceiling of the greenhouse. This would allow the irrigation system to provide even coverage of the inside of the greenhouse. The 1/4" DC push valve was chosen because it could connect directly to the tubing and also to the adapters, and because other components of the project were already using a 12V power supply and relay module which would allow for easy activation of the valve.
+
+### Design/System Limitations
+There are a few limitations to this design that would need to be addressed in order implement it on a larger scale application.
+1. The power supply is a 12V 300W power supply.  While this works for small scale applications, larger applications with more powerful hvac systems and lighting systems would require this component to be upgraded.
+2. The SHTC3 only has one I2C address associated with it. Therefore, in order to utilize more than one of these sensors, a module such as an I2C multiplexer would need ot be utilized.
+3. The size of this greenhouse only supports starting seedlings or growing smaller herbs.  The overall scale of the system would have to be increased if completing an entire plant lifecycle was desired.
 ## Test Results Discussion
 The greenhouse is best suited for trays of small plants or seedlings. This is beneficial also for starting your plants earlier in the season before weather is fully condusive for growth, allowing them to mature fully at the desired time independent of mother nature's cooperation. 
 
