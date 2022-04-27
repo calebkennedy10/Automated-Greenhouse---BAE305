@@ -14,6 +14,9 @@ The purpose of this project is to utilize electronics and sensors to automate se
 - Jumper wires (male-male and male-female)
 - Electrical tape
 - Plusivo Hook-up Wire Kit
+- Photoresistor
+- Ws2812 LED Matrix Panel
+- DC 12V 24V to 5V 10A Converter
 ### 3D-Printed Components
 ### Circuit
 ### Greenhouse Assembly
