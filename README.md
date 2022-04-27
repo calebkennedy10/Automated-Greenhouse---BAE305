@@ -36,6 +36,8 @@ Early testing consisted of examining every component separately in order to ensu
 - Access to a faucet/water supply
 ### Procedure
 ## Design Decision Discussion
+### Irrigation
+The objective for the irrigation system was that it would be able to spray a tray of seedlings evenly. To this end, the MIXC Mist Irrigation Kit was chosen because it contained 1/4" tubing and associated misters, tees, and adapters, which would allow the irrigation setup to be small enough to place in three rows against the ceiling of the greenhouse. This would allow the irrigation system to provide even coverage of the inside of the greenhouse. The 1/4" DC push valve was chosen because it could connect directly to the tubing and also to the adapters, and because other components of the project were already using a 12V power supply and relay module which would allow for easy activation of the valve.
 ## Test Results Discussion
 ### System Limitations
 ## Testing Results
