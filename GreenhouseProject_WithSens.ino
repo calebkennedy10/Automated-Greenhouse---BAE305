@@ -18,7 +18,16 @@ Adafruit_NeoPixel pixels(NUMPIXELS, LED_PIN, NEO_GRB + NEO_KHZ800);
 int tempSensPin = A0;
 int RHSensPin = A1;
 int lightSensPin = A2;
-int irrigationTime = 30000;
+int irrigationTime = 1;
+int irrigationInterval = 360;
+int irrigationStatus = 0;
+int hours = 0;
+int minutes1 = 0;
+int minutes2 = 0;
+int timePast = 0;
+int lightThreshold = 550;
+int temperature = 70;
+int humidity1 = 60;
 
 int lowWaterPin = 2;
 int highWaterPin = 4;
@@ -28,12 +37,9 @@ int pumpPin = 8;
 int fanPin = 12;
 int irrigationPin = 13;
 int ventOne = 9;
-int ventTwo = 10;
-int ventThree = 11;
 
 Servo servoOne;
-Servo servoTwo;
-Servo servoThree;
+
 
 
 void setup() {
@@ -47,26 +53,21 @@ void setup() {
   pinMode(highWaterPin, INPUT_PULLUP);
   
   pinMode(refillValve, OUTPUT);
-  // pinMode(LEDPin, OUTPUT);
   pinMode(heaterPin, OUTPUT);
   pinMode(pumpPin, OUTPUT);
   pinMode(fanPin, OUTPUT);
   pinMode(irrigationPin, OUTPUT);
 
-  digitalWrite(refillValve, LOW);
-  // digitalWrite(LEDPin, LOW);
+  digitalWrite(refillValve, HIGH);
   digitalWrite(heaterPin, LOW);
   digitalWrite(pumpPin, HIGH);
-  digitalWrite(fanPin, LOW);
-  digitalWrite(irrigationPin, LOW);
+  digitalWrite(fanPin, HIGH);
+  digitalWrite(irrigationPin, HIGH);
   
   servoOne.attach(ventOne);
-  servoTwo.attach(ventTwo);
-  servoThree.attach(ventThree);
 
-  servoOne.write(0);
-  servoTwo.write(0);
-  servoThree.write(0);
+
+  servoOne.write(120);
 
   Serial.begin(9600);
 
@@ -79,6 +80,7 @@ void setup() {
     while (1) delay(1);
   }
   Serial.println("Found SHTC3 sensor");
+  Serial.println(irrigationInterval);
 }
 
 void loop() {
@@ -87,9 +89,11 @@ void loop() {
   sensors_event_t humidity, temp;
   shtc3.getEvent(&humidity, &temp);// populate temp and humidity objects with fresh data
   lightSensPin = analogRead(A2); 
+  Serial.println(lightSensPin);
 
+  
   if (lightSensPin < lightThreshold){
-      pixels.fill(pixels.Color(255, 255, 255), 0, 64);
+      pixels.fill(pixels.Color(255, 0, 255), 0, 64);
       pixels.show(); 
   }
   else {
@@ -98,69 +102,67 @@ void loop() {
   }
 
   if (lowWaterPin == HIGH) {
-     digitalWrite(refillValve, HIGH);
-       while (highWaterPin==LOW) {
+     digitalWrite(refillValve, LOW);
+       while (highWaterPin== HIGH) {
          delay(1000);
        }
-     digitalWrite(refillValve, LOW);  
+     digitalWrite(refillValve, HIGH);  
    }
-
-  if (temp > 29) {
-     servoOne.write(90);
-     delay(2500);
-     servoTwo.write(90);
-     delay(2500);
-     servoThree.write(90);
-     delay(2500);
-     digitalWrite(fanPin, HIGH);
-     digitalWrite(pumpPin, LOW);
-   }
-   else if (temp > 24 & humidity< 50){
-     servoOne.write(90);
-     delay(2500);
-     servoTwo.write(90);
-     delay(2500);
-     servoThree.write(90);
-     delay(2500);
-     digitalWrite(fanPin, HIGH);
-     digitalWrite(pumpPin, LOW);
-   }
-   else if (temp > 24) {
-     servoOne.write(90);
-     delay(2500);
-     servoTwo.write(90);
-     delay(2500);
-     servoThree.write(90);
-     delay(2500);
-     digitalWrite(fanPin, HIGH);
-   }
-   else if (temp < 12) {
-     servoOne.write(0);
-     delay(2500);
-     servoTwo.write(0);
-     delay(2500);
-     servoThree.write(0);
-     delay(2500);
-     digitalWrite(heaterPin, HIGH);
-   }
-   else{
-     servoOne.write(90);
-     delay(2500);
-     servoTwo.write(90);
-     delay(2500);
-     servoThree.write(90);
+temperature = temp.temperature;
+humidity1 = humidity.relative_humidity;
+Serial.println(temperature);
+Serial.println(humidity1);
+   
+  if (temperature > 29) {
+     servoOne.write(30);
      delay(2500);
      digitalWrite(fanPin, LOW);
+     digitalWrite(pumpPin, LOW);
+     digitalWrite(heaterPin, LOW);
+   }
+   else if (temperature> 24 & humidity1 < 50){
+     servoOne.write(30);
+     delay(2500);
+     digitalWrite(fanPin, LOW);
+     digitalWrite(pumpPin, LOW);
+      digitalWrite(heaterPin, LOW);
+   }
+   else if (temperature> 24) {
+     servoOne.write(30);
+     delay(2500);
+     digitalWrite(fanPin, LOW); 
+     digitalWrite(heaterPin, LOW);
+     digitalWrite(pumpPin, HIGH);
+     
+   }
+   else if (temperature < 22) {
+     servoOne.write(120);
+     delay(2500);
+     digitalWrite(heaterPin, HIGH);
+     digitalWrite(pumpPin, HIGH);
+     digitalWrite(fanPin, HIGH);
+   }
+   else{
+     servoOne.write(75);
+     delay(2500);
+     digitalWrite(fanPin, HIGH);
      digitalWrite(heaterPin, LOW);
      digitalWrite(pumpPin, HIGH);
    }
 
-int   runTime = millis() / 1000;
-int   interval = runTime / 30;
-    if (interval % 2 == 0) {
-      digitalWrite(irrigationPin, HIGH);
-    }
-    else {
-      digitalWrite(irrigationPin, LOW);
-    }
+  minutes1 = millis()/60/1000-minutes2;
+Serial.println(minutes1);
+  if(minutes1 >= irrigationInterval & irrigationStatus == 0) {
+    minutes2 = minutes2+360;
+    irrigationStatus =1;
+    digitalWrite(irrigationPin, LOW);
+  }
+  else if(minutes1>=irrigationTime & irrigationStatus == 1) {
+    minutes2 = minutes2+1;
+    irrigationStatus=0;
+    digitalWrite(irrigationPin, HIGH);
+  }
+ 
+
+    
 }
