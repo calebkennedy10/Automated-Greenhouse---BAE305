@@ -15,7 +15,7 @@ The purpose of this project is to utilize electronics and sensors to automate se
 - Plusivo Hook-up Wire Kit
 - Photoresistor
 - Ws2812 LED Matrix Panel
-- DC 12V 24V to 5V 10A Converter
+- DC 12V to 5V Converter
 - 1/2" PVC pipe and various 1/2" fittings
 - 10W 110V AC aquarium pump with 1/2" ID tubing output
 - 1/2" ID tubing and barb fittings
@@ -63,6 +63,7 @@ For the evaporative cooling system assembly, mount it as far to one side of the 
 Finally, use an Arduino to set three servo motors to 30 degrees.  Then press a servo arm into three 3D printed servo attachments.  Put the servo attachments on the ends of the vent flaps.  For the multi-vent assembly, a servo attachment will need to be added to both the lower and upper vent flap.  All three attachments will have to be connected using the vent links in the orientation shown by the picture above.  Once the links are in place, use a soldering iron to melt and expad the ends of the links to keep them from slipping out of the servo attachements.  Finally, mount all three servos using the servo mounts.
 #### Heating System
 #### Lights
+The parts needed for the lighting system are the Ws2812 LED matrix panel, DC 12V to 5V converter, photoresistor, wires, a resistor, 12V power supply, and Arduino. The voltage converter and Arduino are placed in the electronics housing. The LED matrix is or glued in place on the top exterior of the greenhouse. Two 1/16-inch holes are drilled into the top of the of the electronics housing. The two photoresistor wire ends are put through these two holes with the light sensing part of the photoresistor on the exterior. The other resistor is placed on the Arduino breadboard. All the components are wired according to the schematic.
 #### Sensors
 #### Irrigation
 The irrigation system consists of a 1/4" 12V DC plastic solenoid valve, as well 15 feet of 1/4" diameter tubing, 18 adjustable mister nozzles, 20 flat tee fittings, and a 3/4"-1/4" faucet adapter from the MXC Automatic Drip Mist Irrigation Kit. It is split into three lines across the length of the ceiling of the greenhouse, which are attached via twelve loops of bonsai wire strung through pairs of holes drilled into the ceiling. Each line contains 6 mister nozzles, which are attached to flat tees with 1/2" lengths of tubing; tubing is also used to string the flat tees together in order to create an irrigation line. 2 other flat tees are used to connect the lines to each other and to the tubing that goes to the solenoid valve. All connection of tubing to tees should be done using a butane torch to soften the tubing for easier insertion. The solenoid valve can also be connected to the faucet adapter via a portion of tubing, and then wired to the power supply and relay using male-to-female jumper wires. The wires should be soldered to the tabs on the valve-- the left wire to power and the right to the relay.
