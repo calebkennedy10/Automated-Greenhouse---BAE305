@@ -33,6 +33,7 @@ The purpose of this project is to utilize electronics and sensors to automate se
 - TIP 31C Transistor 
 - 12VDC, 30/40A Automotive Relay
 - Bracket mount for relay
+- Super glue
 
 ### 3D-Printed Components
 All 3D printed componets are available via the "3D PRINTED PARTS" file in the repository.  They are available in their native SOLIDWORKS CAD formats.  Please refer to the assembly files in order to determine which parts are to be printed for each assembly and how the parts are assembled together.  3mm self tapping screws and 1/4"-20 bolts and nuts are the only pieces of hardware required to assemble each 3D printed assembly.  Parts can be printed out of several different materials and are designed to be printed on an FDM 3D printer.  Our team utilized Overture PLA Filament to print the parts; however, other common filaments types such as PETG, ABS, and ASA are acceptable if so desired.  All parts should be printed at a .2mm layer height with and infill density of 10%-15%.  It is advised to make spares of smaller parts such as the water emitters and servo attachments as these parts are easy to break during the assembly process.  Moving parts such as the vent flaps s will have to be sanded in order to allow for smooth rotation.  It is also recommended to drill out or sand holes where rotation will take place.  It is recommended to use a printer with a build plate area of at least 220mm x 220mm when printing large parts such as the vent flaps for the multivent.
@@ -375,6 +376,9 @@ Early testing consisted of examining every component separately in order to ensu
 - USB connector (Arduino to laptop)
 - Access to a faucet/water supply
 - Access to electrical outlet
+- Ice
+- Heat gun or other mild to moderate heat source
+- Flashlight
 ### Procedure
 •	Plug power supply power cord into wall and turn on the power supply.  Using a multimeter or voltmeter, ensure that the power supply outputs 12V and voltage converter outputs 5V.
 
