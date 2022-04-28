@@ -62,7 +62,8 @@ For the evaporative cooling system assembly, mount it as far to one side of the 
 
 <img src="IMAGES/EVAPORATIVE COOLING WALL ASSEMBLY.JPG" alt="Evaporative Cooling Wall">
 (Evaporative Cooling Wall)
-<img src="IMAGES/MULTI_VENT_ASSEMBLY.JPG alt="Multi-Vent Assembly">
+
+<img src="IMAGES/MULTI_VENT_ASSEMBLY.JPG" alt="Multi-Vent Assembly">
 (Multi-Vent Assembly)
 
 Finally, use an Arduino to set three servo motors to 30 degrees.  Then press a servo arm into three 3D printed servo attachments.  Put the servo attachments on the ends of the vent flaps.  For the multi-vent assembly, a servo attachment will need to be added to both the lower and upper vent flap.  All three attachments will have to be connected using the vent links in the orientation shown by the picture above.  Once the links are in place, use a soldering iron to melt and expad the ends of the links to keep them from slipping out of the servo attachements.  Finally, mount all three servos using the servo mounts.
