@@ -99,7 +99,7 @@ There are a few limitations to this design that would need to be addressed in or
 3. The size of this greenhouse only supports starting seedlings or growing smaller herbs.  The overall scale of the system would have to be increased if completing an entire plant lifecycle was desired.
 4. The temperature output does not modulate so in order for precise temperature control on a larger scale, more complex modifications would have to be implemented like VFD incorporation.
 ## Test Results Discussion
-The greenhouse is best suited for trays of small plants or seedlings. This is beneficial also for starting your plants earlier in the season before weather is fully condusive for growth, allowing them to mature fully at the desired time independent of mother nature's cooperation. 
+The greenhouse is best suited for trays of small plants or seedlings. This is beneficial also for starting your plants earlier in the season before weather is fully conducive for growth, allowing them to mature fully at the desired time independent of mother nature's cooperation. 
 
 ## Testing Results
-
+The irrigation system was testing by running a small amount of water from the external hose/faucet, then opening and closing the valve to test whether the water would shut off in the greenhouse. The testing found that the irrigation system could be operated fully automatically, with minimal leaking from the mister nozzles.
