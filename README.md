@@ -372,7 +372,6 @@ Early testing consisted of examining every component separately in order to ensu
 ### Procedure
 - Plug 12V power supply into an outlet and attach the irrigation system to a hose faucet
 - Use demonstration code to activate each aspect of the greenhouse individually
-- 
 ## Design Decision Discussion
 #### Power Supply
 The first power supply we selected was 12V/120W. It was assumed that this would be sufficient to run all the components associated with this project. This changed once the heating system was finally selected and required 100W alone. Since this took up so much of the power supply’s capacity, it was realized that it may not be able to handle every component, so the power supply was upgraded to 12V/240W.
