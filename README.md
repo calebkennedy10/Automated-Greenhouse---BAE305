@@ -370,8 +370,23 @@ Early testing consisted of examining every component separately in order to ensu
 - Access to a faucet/water supply
 - Access to electrical outlet
 ### Procedure
-- Plug 12V power supply into an outlet and attach the irrigation system to a hose faucet
-- Use demonstration code to activate each aspect of the greenhouse individually
+•	Plug power supply power cord into wall and turn on the power supply.  Using a multimeter or voltmeter, ensure that the power supply outputs 12V and voltage converter outputs 5V.
+•	Upload the demo code to the microcontroller.
+•	Leave the laptop connected via the usb cable and open the serial monitor.
+•	Input the following commands:
+o	90,90,0,0 : evaporate cooling wall should turn on, fans should turn on, and vents should open.
+o	0,0,1,0: Cooling system should turn off, fans should close, heater should turn on,
+o	70,50,0,1: Heater should turn off, lights should turn off, irrigation should turn on,
+o	70,50,0,0: All systems should turn off
+•	Upon passing all of these tests, upload the automated code.
+•	Leave computer connected via usb cable and open the serial monitor to observe sensor outputs.
+•	Manually alter the environment in the following ways:
+o	Cover photoresistor: lights should turn on
+o	Shine a flashlight on the photoresistor: lights should turn off
+o	Use a mild heat source close to temperature sensor: cooling system should turn on, vents should open
+o	Apply ice to the temperature sensor: cooling system should turn off,heater should turn on,
+•	If all of these tests are successful, then the system is operating properly.
+
 ## Design Decision Discussion
 #### Power Supply
 The first power supply we selected was 12V/120W. It was assumed that this would be sufficient to run all the components associated with this project. This changed once the heating system was finally selected and required 100W alone. Since this took up so much of the power supply’s capacity, it was realized that it may not be able to handle every component, so the power supply was upgraded to 12V/240W.
