@@ -97,7 +97,7 @@ There are a few limitations to this design that would need to be addressed in or
 1. The power supply is a 12V 300W power supply.  While this works for small scale applications, larger applications with more powerful hvac systems and lighting systems would require this component to be upgraded.
 2. The SHTC3 only has one I2C address associated with it. Therefore, in order to utilize more than one of these sensors, a module such as an I2C multiplexer would need ot be utilized.
 3. The size of this greenhouse only supports starting seedlings or growing smaller herbs.  The overall scale of the system would have to be increased if completing an entire plant lifecycle was desired.
-4. The temperature output does not modulate so in order for precise temperature control on a larger scale, more complex modifications would have to be implemented like VFD incorporation.
+4. The temperature output does not modulate so in order for precise temperature control on a larger scale, more complex modifications would have to be implemented like VFD incorporation. Also due to the lack of modulation, the equipment will cycle more so the equipment will not last as long. When dealing with larger, more expensive equipment, this would be an issue.
 ## Test Results Discussion
 The greenhouse is best suited for trays of small plants or seedlings. This is beneficial also for starting your plants earlier in the season before weather is fully conducive for growth, allowing them to mature fully at the desired time independent of mother nature's cooperation. 
 
