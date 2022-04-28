@@ -84,6 +84,7 @@ Early testing consisted of examining every component separately in order to ensu
 - Laptop
 - USB connector (Arduino to laptop)
 - Access to a faucet/water supply
+- Access to electrical outlet
 ### Procedure
 - Plug 12V power supply into an outlet and attach the irrigation system to a hose faucet
 - Use demonstration code to activate each aspect of the greenhouse individually
