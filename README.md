@@ -79,7 +79,7 @@ To house the arduino and power supply, a wooden box was made. This box was place
 ### Code
 
 ## Testing Description
-Early testing consisted of examining every component separately in order to ensure basic functionality, such as whether valves would open, or servo motors would turn when instructed to by the code. The components were then tested in combination, when they were wired up as they would be for the greenhouse. 
+Early testing consisted of examining every component separately in order to ensure basic functionality, such as whether valves would open,servo motors would turn, fans would blow air, and the heater would get hot when instructed to by the code. The components were then tested in combination, when they were wired up as they would be for the greenhouse. 
 ### Equipment
 - Laptop
 - USB connector (Arduino to laptop)
