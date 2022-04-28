@@ -76,6 +76,9 @@ The irrigation system consists of a 1/4" 12V DC plastic solenoid valve, as well 
 ### Code
 
 #### Automation Code
+
+This is the true automation code for the greenhouse.  This code builds off of the demo code’s logic to create an automated system by utilizing sensor readings to control subsystems rather than utilizing a manual input from the operator.  Once again, the sensors that are utilized are the Adafruit SHTC3 temperature and humidity sensor, which operates using the I2C communication protocol, and a voltage divider circuit that utilizes a photoresistor to vary the analog input read by the Arduino according to the exterior lighting conditions.  The data collected from these sensors are stored in integer variables that are applied to logic base if, else if, and else statements to determine whether the cooling, heating, and lighting systems come on.  The irrigation system was automated through the use of a simple algorithm that use the milllis() Arduino function to turn on the irrigation system for one minute every six hours.  These intervals can easily be changed by modifying a couple of variables at the start of the code.  All variables that are utilized within in this code use a naming scheme that allows the operator to easily determine the data that is stored in the variable in order to allow for quick modifications to be made to the code in order to meet the operator’s needs.
+
 `// variable setup`
 
 `#include <Servo.h>`
