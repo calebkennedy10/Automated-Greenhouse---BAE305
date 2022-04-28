@@ -39,7 +39,7 @@ All 3D printed componets are available via the "3D PRINTED PARTS" file in the re
 ### Circuit
 While the circuit for this project is not overly complex, there is a lot of wiring involved.  Please refer to the schematic below when wiring up the system.  It is recommend that soldered connections with heat shrink coverings be utilized where possible in order to provide a water-tight seal around connections.  The power supply, voltage converter, microcontroller, breadboard, and relays should all be placed in a sealed container to protect them from the elements.  Our team utilized a 50W laser cutter to create a box to store all of these components.  If you have access to this type of tooling and wish to use our plans, the files for the box can be found in this repository.  Otherwise, any container or self-fabricated box will do as long as it provides adequate protection. 
 
-![](https://github.com/calebkennedy10/EE305_Project_Greenhouse/blob/main/IMAGES/circuit%20(5).png)
+![](/calebkennedy10/EE305_Project_Greenhouse/blob/main/IMAGES/circuit%20(5).png)
 
 ### Greenhouse Assembly
 #### Cooling System
