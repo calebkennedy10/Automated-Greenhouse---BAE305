@@ -43,7 +43,7 @@ While the circuit for this project is not overly complex, there is a lot of wiri
 
 ### Greenhouse Assembly
 #### Cooling System
-(The plumbing instructions for this section are intentionally a little vague.  There are multiple ways to plumb this system, and our team believe that it is best for plumbing system to be custom fabricated for each application of this design.)
+(The plumbing instructions for this section are intentionally a little vague.  There are multiple ways to plumb this system, and our team believes that it is best for plumbing system to be custom fabricated for each application of this design.)
 
 Two vent fan assemblies and one evaporative cooling system assembly are required to complete the cooling system.  As mentioned previously, please refer to the SOLIDWORKS assembly files in order ot determine all 3D printed parts of the required to complete these assemblies.  The vent fan assemblies will be mounted on one end of the greenhouse while the evaporative cooling assembly will be mounted on the other side.  Assemble all sub assemblies prior to installation using 3mm screws.  Use the mounting adapters for the all of the assemblies to mark the holes that will need to be drilled in the house to mount the components.  All mounting holes will use 1/4"-20 hardware to hold components in place
 
@@ -77,6 +77,175 @@ The exterior of the greenhouse was made using a clear plastic tub from the hardw
 #### Circuitry and Wiring
 To house the arduino and power supply, a wooden box was made. This box was placed ontop of a lattice above the water bucket, but could be easily relocated. The goal with placing it above the water supply was to have the lid encasement be one of the highest points on the design so that the photoresistor could be placed in the lid and get a more accurate reading to know when to turn on the lighting. Additionally, this meant the photoresistor did not have to be wired far away, and prevented the need for a PCB circuit. For this first iteration of design, the team did not elect to make an additional wire encasement for the wires that had to leave the circuit box and run to the greenhouse itself. While discussions were had about each of these design components, the decision was made to leave these add-on options for future models. 
 ### Code
+
+#### Automation Code
+`// variable setup`
+
+`#include <Servo.h>`
+
+`#include "Adafruit_SHTC3.h"`
+`Adafruit_SHTC3 shtc3 = Adafruit_SHTC3();`
+
+`#include <Adafruit_NeoPixel.h>`
+`#ifdef __AVR__`
+  `#include <avr/power.h>`
+`#endif`
+`#define LED_PIN 3`
+`#define NUMPIXELS 64`
+`Adafruit_NeoPixel pixels(NUMPIXELS, LED_PIN, NEO_GRB + NEO_KHZ800);`
+`#define DELAYVAL 500`
+
+`int tempSensPin = A0;`
+`int RHSensPin = A1;`
+`int lightSensPin = A2;`
+`int irrigationTime = 1;`
+`int irrigationInterval = 360;`
+`int irrigationStatus = 0;`
+`int hours = 0;`
+`int minutes1 = 0;`
+`int minutes2 = 0;`
+`int timePast = 0;`
+`int lightThreshold = 550;`
+`int temperature = 70;`
+`int humidity1 = 60;`
+
+`int lowWaterPin = 2;`
+`int highWaterPin = 4;`
+`int refillValve = 5;`
+`int heaterPin = 7;`
+`int pumpPin = 8;`
+`int fanPin = 12;`
+`int irrigationPin = 13;`
+`int ventOne = 9;`
+
+`Servo servoOne;`
+
+
+
+`void setup() {`
+  `// put your setup code here, to run once:`
+  `#if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)`
+  `clock_prescale_set(clock_div_1);`
+  `#endif`
+  `pixels.begin();`
+  
+  `pinMode(lowWaterPin, INPUT_PULLUP);`
+  `pinMode(highWaterPin, INPUT_PULLUP);`
+  
+  `pinMode(refillValve, OUTPUT);`
+  `pinMode(heaterPin, OUTPUT);`
+  `pinMode(pumpPin, OUTPUT);`
+  `pinMode(fanPin, OUTPUT);`
+  `pinMode(irrigationPin, OUTPUT);`
+
+  `digitalWrite(refillValve, HIGH);`
+  `digitalWrite(heaterPin, LOW);`
+  `digitalWrite(pumpPin, HIGH);`
+  `digitalWrite(fanPin, HIGH);`
+  `digitalWrite(irrigationPin, HIGH);`
+  
+  `servoOne.attach(ventOne);`
+
+
+  `servoOne.write(120);`
+
+  `Serial.begin(9600);`
+
+  `while (!Serial)`
+   `delay(10);     // will pause Zero, Leonardo, etc until serial console opens`
+
+  `Serial.println("SHTC3 test");`
+  `if (! shtc3.begin()) {`
+    `Serial.println("Couldn't find SHTC3");`
+    `while (1) delay(1);`
+  `}`
+  `Serial.println("Found SHTC3 sensor");`
+  `Serial.println(irrigationInterval);`
+`}`
+
+`void loop() {`
+  `// put your main code here, to run repeatedly:`
+
+  `sensors_event_t humidity, temp;`
+  `shtc3.getEvent(&humidity, &temp);// populate temp and humidity objects with fresh data`
+  `lightSensPin = analogRead(A2); `
+  `Serial.println(lightSensPin);`
+
+  
+  `if (lightSensPin < lightThreshold){`
+      `pixels.fill(pixels.Color(255, 0, 255), 0, 64);`
+      `pixels.show(); `
+  `}`
+  `else {`
+      `pixels.fill(pixels.Color(0, 0, 0), 0, 64);`
+      `pixels.show();`
+  `}`
+
+  `if (lowWaterPin == HIGH) {`
+     `digitalWrite(refillValve, LOW);`
+       `while (highWaterPin== HIGH) {`
+         `delay(1000);`
+       `}`
+     `digitalWrite(refillValve, HIGH);  `
+   `}`
+`temperature = temp.temperature;`
+`humidity1 = humidity.relative_humidity;`
+`Serial.println(temperature);`
+`Serial.println(humidity1);`
+   
+  `if (temperature > 29) {`
+     `servoOne.write(30);`
+     `delay(2500);`
+     `digitalWrite(fanPin, LOW);`
+     `digitalWrite(pumpPin, LOW);`
+     `digitalWrite(heaterPin, LOW);`
+   `}`
+   `else if (temperature> 24 & humidity1 < 50){`
+     `servoOne.write(30);`
+     `delay(2500);`
+     `digitalWrite(fanPin, LOW);`
+     `digitalWrite(pumpPin, LOW);`
+      `digitalWrite(heaterPin, LOW);`
+   `}`
+   `else if (temperature> 24) {`
+     `servoOne.write(30);`
+     `delay(2500);`
+     `digitalWrite(fanPin, LOW); `
+     `digitalWrite(heaterPin, LOW);`
+     `digitalWrite(pumpPin, HIGH);`
+     
+   `}`
+   `else if (temperature < 22) {`
+     `servoOne.write(120);`
+     `delay(2500);`
+     `digitalWrite(heaterPin, HIGH);`
+     `digitalWrite(pumpPin, HIGH);`
+     `digitalWrite(fanPin, HIGH);`
+   `}`
+   `else{`
+     `servoOne.write(75);`
+     `delay(2500);`
+     `digitalWrite(fanPin, HIGH);`
+     `digitalWrite(heaterPin, LOW);`
+     `digitalWrite(pumpPin, HIGH);`
+   `}`
+
+  `minutes1 = millis()/60/1000-minutes2;`
+`Serial.println(minutes1);`
+  `if(minutes1 >= irrigationInterval & irrigationStatus == 0) {`
+    `minutes2 = minutes2+360;`
+    `irrigationStatus =1;`
+    `digitalWrite(irrigationPin, LOW);`
+  `}`
+  `else if(minutes1>=irrigationTime & irrigationStatus == 1) {`
+    `minutes2 = minutes2+1;`
+    `irrigationStatus=0;`
+    `digitalWrite(irrigationPin, HIGH);`
+  `}`
+ 
+
+    
+`}`
 
 ## Testing Description
 Early testing consisted of examining every component separately in order to ensure basic functionality, such as whether valves would open,servo motors would turn, fans would blow air, and the heater would get hot when instructed to by the code. The components were then tested in combination, when they were wired up as they would be for the greenhouse. 
