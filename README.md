@@ -428,7 +428,12 @@ There are a few limitations to this design that would need to be addressed in or
 6. Circuitry and wiring could easily be adjusted for larger scale applications. A circuits box on one end of the green house would allow for housing of the various components (also note limitation #1 and #4), as well as a more intentional routing of the wiring, would be neccessary. If the exterior is changed in a manner similar to something suggested in limitation #5, it would be relatively simple to add wire housing along the base of the exterior. 
 
 ## Test Results Discussion
+The heating system was able to provide heat to the greenhouse when told to and was able to turn off when no longer needed. As discussed in an above section, the system cannot modulate so it controls to a tight threshold without cycling on and off a lot. The exact maximum temperature rise is unknown at this point so by itself, it may not be able to sufficiently heat in extremely cold temperatures. 
+
 The greenhouse is best suited for trays of small plants or seedlings. This is beneficial also for starting your plants earlier in the season before weather is fully conducive for growth, allowing them to mature fully at the desired time independent of mother nature's cooperation. 
 
 ## Testing Results
+The heating system was tested individually before and after mounting. A test code was utilized that turned the heater and fan on and off for a certain amount of time. Once it was turned on, it was ensured that the fan was blowing, and that the heating element was on. It was tested again using the provided testing code the same way once everything was assembled.
+
 The irrigation system was testing by running a small amount of water from the external hose/faucet, then opening and closing the valve to test whether the water would shut off in the greenhouse. The testing found that the irrigation system could be operated fully automatically, with minimal leaking from the mister nozzles.
+
